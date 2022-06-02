@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Routes, Route } from 'solid-app-router';
+import { Routes, Route, Navigate } from 'solid-app-router';
 
 import Users from './screens/Users';
 import About from './screens/Abouts';
@@ -11,6 +11,7 @@ const App: Component = () => {
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<Navigate href="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/about" element={<About />} />
